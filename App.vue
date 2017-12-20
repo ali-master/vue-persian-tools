@@ -18,6 +18,14 @@
 							</div>
 						</div>
 
+						<div class="inline field">
+							<label>Validate CardNumber</label>
+							<input type="number" placeholder="Example: 6037701689095443" v-model="isValidCardNumber" />
+
+							<div class="ui compact blue message mini">
+								<p>Result is: <span id="persian-tools-verifyCardNumber">{{isValidCardNumber | verifyCardNumber}}</span></p>
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -35,6 +43,7 @@ export default {
 	name: "application",
 	data: () => ({
 		isPersianInput: "",
+		isValidCardNumber: "",
 	}),
 };
 </script>
