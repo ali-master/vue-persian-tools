@@ -1,0 +1,12 @@
+{
+	"ignore": ["node_modules/**"],
+	"env": {
+		"test": {
+			"presets": ["es2015", "stage-0"],
+			"plugins": ["transform-es2015-modules-commonjs"]
+		},
+		"production": {
+			"presets": [["es2015", { "modules": false }], "stage-0"]
+		}
+	}
+}

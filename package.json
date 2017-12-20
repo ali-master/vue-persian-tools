@@ -1,0 +1,81 @@
+{
+	"name": "vue-persian-tools",
+	"description": "Vue Persian Tools and Filters",
+	"version": "0.0.0",
+	"license": "MIT",
+	"author": "Ali Torki (https://github.com/ali-master/)",
+	"main": "./dist/vuePersianTools.bundle.js",
+	"keywords": ["vue 2 filters", "vue persian tools", "persian tools", "vue persian plugin", "vue persian filters"],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ali-master/vue-persian-tools.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ali-master/vue-persian-tools/issues"
+	},
+	"engines": {
+		"node": ">= 4.0.0",
+		"npm": ">= 3.0.0"
+	},
+	"scripts": {
+		"dev": "cross-env NODE_ENV=development webpack-dev-server --hot --color --open --config webpack.dev.config.js",
+		"build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config webpack.dev.config.js",
+		"pack": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+		"dist": "npm run build && npm run pack",
+		"test": "cross-env NODE_ENV=test && jest --coverage"
+	},
+	"files": ["dist/vuePersianTools.bundle.js", "dist/vuePersianTools.bundle.js.gz", "dist/vuePersianTools.bundle.js.map", "vuePersianTools.js"],
+	"devDependencies": {
+		"autoprefixer": "^7.1.6",
+		"babel-core": "^6.26.0",
+		"babel-jest": "^22.0.3",
+		"babel-loader": "^7.1.2",
+		"babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-jest": "^22.0.3",
+		"babel-preset-stage-0": "^6.24.1",
+		"compression": "^1.7.1",
+		"compression-webpack-plugin": "^1.0.1",
+		"cross-env": "^5.1.1",
+		"css-loader": "^0.28.7",
+		"es6-promise": "^4.1.1",
+		"eslint": "^4.12.0",
+		"eslint-plugin-vue": "3.13.0",
+		"extract-text-webpack-plugin": "^3.0.2",
+		"friendly-errors-webpack-plugin": "^1.6.1",
+		"html-webpack-plugin": "^2.30.1",
+		"jest": "^21.2.1",
+		"jest-vue": "^0.8.2",
+		"node-sass": "^4.7.2",
+		"sass-loader": "^6.0.6",
+		"vue": "^2.4.4",
+		"vue-loader": "^13.0.4",
+		"vue-template-compiler": "^2.4.4",
+		"vue-test-utils": "^1.0.0-beta.6",
+		"webpack": "^3.8.1",
+		"webpack-dev-server": "^2.9.5",
+		"webpack-merge": "^4.1.1",
+		"webpack-shell-plugin": "^0.5.0"
+	},
+	"dependencies": {
+		"persian-tools": "^1.0.5"
+	},
+	"eslintIgnore": ["test/*.js", "dist/*.js", "node_modules"],
+	"eslintConfig": {
+		"extends": ["eslint:recommended", "plugin:vue/recommended"]
+	},
+	"jest": {
+		"verbose": true,
+		"mapCoverage": true,
+		"coverageDirectory": "test/coverage",
+		"moduleNameMapper": {
+			"^vue$": "vue/dist/vue.common.js"
+		},
+		"moduleFileExtensions": ["js", "vue"],
+		"transform": {
+			"^.+\\.js$": "babel-jest",
+			".*\\.(vue)$": "jest-vue"
+		}
+	}
+}
