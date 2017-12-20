@@ -9,21 +9,30 @@
 					<br>
 
 					<div class="ui form success">
-						<div class="inline field">
+						<div class="field">
 							<label>isPersian</label>
 							<input type="text" placeholder="Write here..." v-model="isPersianInput" />
 
-							<div class="ui compact blue message mini">
+							<div class="ui yellow message mini">
 								<p>Result is: <span id="persian-tools-isPersian">{{isPersianInput | isPersian}}</span></p>
 							</div>
 						</div>
 
-						<div class="inline field">
+						<div class="field">
 							<label>Validate CardNumber</label>
 							<input type="number" placeholder="Example: 6037701689095443" v-model="isValidCardNumber" />
 
-							<div class="ui compact blue message mini">
+							<div class="ui yellow message mini">
 								<p>Result is: <span id="persian-tools-verifyCardNumber">{{isValidCardNumber | verifyCardNumber}}</span></p>
+							</div>
+						</div>
+
+						<div class="field">
+							<label>Verify Iranian National-id</label>
+							<input type="number" placeholder="Example: 0499370899" v-model="isValidIranianNationalId" />
+
+							<div class="ui yellow message mini">
+								<p>Result is: <span id="persian-tools-isValidIranianNationalId">{{isValidIranianNationalId | verifyIranianNationalId}}</span></p>
 							</div>
 						</div>
 					</div>
@@ -44,6 +53,7 @@ export default {
 	data: () => ({
 		isPersianInput: "",
 		isValidCardNumber: "",
+		isValidIranianNationalId: "",
 	}),
 };
 </script>
